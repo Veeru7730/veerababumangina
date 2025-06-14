@@ -8,7 +8,10 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { background-color: #000; color: #fff; scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+    body { background-color: #000; color: #fff; }
     .navbar { background-color: #000; }
     .navbar-brand, h2, .card-title { color: #00CED1 !important; }
     .nav-link { color: #fff !important; transition: color 0.3s; }
@@ -43,7 +46,6 @@
       background-color: #00b2b2;
     }
     .btn-success img { margin-right: 5px; }
-    .progress-bar { transition: width 1s ease-in-out; }
     .hero-section h1, .hero-section p, .hero-section a {
       animation: fadeUp 1.2s ease-in-out;
     }
@@ -53,6 +55,9 @@
     }
     .navbar-collapse.show {
       background-color: #000;
+    }
+    section {
+      scroll-margin-top: 80px; /* offset for fixed navbar */
     }
   </style>
 </head>
@@ -79,7 +84,6 @@
   </div>
 </nav>
 
-<!-- Navbar Close on Click Script -->
 <script>
   function closeNavbar() {
     const navbar = document.getElementById('navbarNav');
@@ -119,11 +123,11 @@
     particles: {
       number: { value: 80, density: { enable: true, value_area: 800 } },
       color: { value: "#00CED1" },
-      shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
-      opacity: { value: 0.5, random: false },
+      shape: { type: "circle", stroke: { width: 0 }, polygon: { nb_sides: 5 } },
+      opacity: { value: 0.5 },
       size: { value: 3, random: true },
       line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-      move: { enable: true, speed: 4, direction: "none", random: false, straight: false, out_mode: "bounce", bounce: true }
+      move: { enable: true, speed: 4, out_mode: "bounce", bounce: true }
     },
     interactivity: {
       detect_on: "canvas",
@@ -134,8 +138,6 @@
   });
 </script>
 
-
-  
 <!-- About -->
 <section id="about" class="py-5" data-aos="fade-up">
   <div class="container text-center">
